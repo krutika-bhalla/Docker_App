@@ -18,3 +18,12 @@ services:
       - "5173:5173"
     depends_on:
       - backend
+  
+  test:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: flask_backend_tests
+    command: pytest 
+    depends_on:
+      - backend
