@@ -1,0 +1,2 @@
+Static files would be rendered as is. Good practise would be to make an html, about section 
+of the website would be here

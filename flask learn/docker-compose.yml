@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./flask_server
+      dockerfile: Dockerfile
+    container_name: flask_backend
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: react-frontend
+    ports:
+      - "3001:3001"
+    depends_on:
+      - backend
